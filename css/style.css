@@ -1,0 +1,159 @@
+@charset "UTF-8";
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.form .invalid {
+  background-color: rgba(243, 103, 82, 0.3);
+  border: 1px solid rgba(230, 59, 33, 0.7);
+  border-radius: 2px;
+  box-shadow: 0 0 5px rgba(224, 113, 96, 0.7);
+}
+
+.form .invalid-feedback {
+  color: red;
+  font-size: 13px;
+  margin: 0;
+}
+
+body {
+  background-color: #e8e8e8;
+  font-size: 1em;
+  color: #717272;
+}
+
+.form {
+  width: 45%;
+  margin: 50px auto;
+  border: 1px solid #BEC0C0;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.form .main_header {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2em;
+  color: #494B4C;
+}
+.form .container {
+  width: 70%;
+  margin: 0 auto;
+}
+.form div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.form input {
+  outline: none;
+}
+.form .male_choice,
+.form .check_sms {
+  display: inline-block;
+}
+.form .check_sms input {
+  margin: 0 14px;
+  height: 12px;
+  position: relative;
+  top: 1px;
+}
+.form .btn_next {
+  padding: 10px 0;
+  margin-bottom: 30px;
+  background-color: #0E44F1;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+}
+.form .btn_next.btn_next-step, .form .btn_next.btn_previous-step {
+  width: 48%;
+}
+.form .btn_next.btn_previous-step {
+  margin-right: 18px;
+  background-color: #A6B8F1;
+}
+.form .buttons {
+  display: inline-block;
+  width: 100%;
+}
+.form .disabledBtn {
+  background-color: rgba(5, 67, 238, 0.5);
+}
