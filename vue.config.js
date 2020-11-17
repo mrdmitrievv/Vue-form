@@ -1,3 +1,3 @@
 module.exports = {
-    piblicPath: '/vue-form'
+    piblicPath: '/vue-form/s'
 }
