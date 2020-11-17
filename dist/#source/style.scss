@@ -1,0 +1,105 @@
+@import "reset.scss";
+
+$body_color: #717272;
+$form_color: #fff;
+$button_color1: #0E44F1;
+$button_color2: #A6B8F1;
+$disabledBtn_next: rgba(5, 67, 238, 0.5);
+%invalid {
+  background-color: rgba(243, 103, 82, 0.3);
+  border: 1px solid rgba(230, 59, 33, 0.7);
+  border-radius: 2px;
+  box-shadow: 0 0 5px rgba(224, 113, 96, 0.7);
+}
+%invalidtext {
+  color: red;
+  font-size: 13px;
+  margin: 0;
+}
+
+body {
+  background-color: #e8e8e8;
+  font-size: 1em;
+  color: $body_color;
+}
+
+.form {
+  width: 45%;
+  margin: 50px auto;
+  border: 1px solid #BEC0C0;
+  border-radius: 10px;
+  background-color: $form_color;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+  .main_header {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2em;
+    color: #494B4C;
+  }
+
+  .container {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  input {
+    outline: none;
+  }
+
+  .male_choice,
+  .check_sms {
+    display: inline-block;
+  }
+
+  .check_sms{
+    input {
+      margin: 0 14px;
+      height: 12px;
+      position: relative;
+      top: 1px;
+    }
+  }
+
+  .btn_next {
+    padding: 10px 0;
+    margin-bottom: 30px;
+    background-color: $button_color1;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    &.btn_next-step,
+    &.btn_previous-step{
+      width: 48%;
+    }
+    &.btn_previous-step{
+      margin-right: 18px;
+      background-color: $button_color2;
+    }
+  }
+
+  .buttons {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .invalid {
+    @extend %invalid;
+  }
+
+  .invalid-feedback {
+    @extend %invalidtext;
+  }
+
+  .disabledBtn {
+    background-color: $disabledBtn_next;
+  }
+}
